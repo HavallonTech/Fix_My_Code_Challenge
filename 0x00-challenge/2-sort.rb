@@ -7,19 +7,11 @@ ARGV.each do |arg|
     i_arg = arg.to_i
     
     # insert result at the right position
-    is_inserted = false
     i = 0
-    l = result.size
-    while !is_inserted && i < l do
-        if result[i] <= i_arg  # Fix: Use <= instead of <
-            i += 1
-        else
-            result.insert(i, i_arg)  # Fix: insert at index i, not i - 1
-            is_inserted = true
-            break
-        end
+    while i < result.size && result[i] < i_arg do
+        i += 1
     end
-    result << i_arg if !is_inserted
+    result.insert(i, i_arg)
 end
 
 puts result
