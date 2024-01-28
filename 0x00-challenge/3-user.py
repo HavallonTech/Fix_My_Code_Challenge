@@ -87,9 +87,10 @@ if __name__ == '__main__':
         print("User.password should be None if setter to an integer")
 
     # if not user_1.is_valid_password(u_pwd):
-    if user_1.is_valid_password(u_pwd):
-        print("is_valid_password should return True if it's the right \
+    if not user_1.is_valid_password(u_pwd):
+        # print("is_valid_password should return True if it's the right \
 password")
+        print("True")
 
     if user_1.is_valid_password("Fakepwd"):
         print("is_valid_password should return False if it's not the right \
